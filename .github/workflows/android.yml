@@ -25,6 +25,16 @@ jobs:
           packages: 'platform-tools'
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      - name: Debug Capacitor paths
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Repository files:"
+          ls -la
+          echo "Web assets:"
+          ls -la www
+          echo "Capacitor configuration:"
+          cat capacitor.config.json
       - name: Create Android project
         run: |
           npx cap add android
